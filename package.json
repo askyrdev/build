@@ -2,19 +2,29 @@
   "name": "@austere/build",
   "private": true,
   "version": "0.1.0",
-  "description": "",
+  "description": "TBC",
   "license": "GPL-2.0-or-later",
+  "main": "lib/index.js",
+  "type": "module",
   "author": {
     "name": "Cameron Terry",
     "email": "cameronterry@protonmail.com"
   },
   "dependencies": {
     "@csstools/postcss-global-data": "^4.0.0",
-    "@rspack/core": "^2.0.8",
+    "fast-glob": "^3.3.3",
     "postcss": "^8.5.15",
     "postcss-import": "^16.1.1",
     "postcss-loader": "^8.2.1",
     "postcss-mixins": "^12.1.2",
     "postcss-preset-env": "^11.3.1"
+  },
+  "peerDependencies": {
+    "@rspack/core": "^1.0.0 || ^2.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@rspack/core": {
+      "optional": true
+    }
   }
 }
