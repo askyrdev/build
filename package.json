@@ -1,0 +1,20 @@
+{
+  "name": "@austere/build",
+  "private": true,
+  "version": "0.1.0",
+  "description": "",
+  "license": "GPL-2.0-or-later",
+  "author": {
+    "name": "Cameron Terry",
+    "email": "cameronterry@protonmail.com"
+  },
+  "dependencies": {
+    "@csstools/postcss-global-data": "^4.0.0",
+    "@rspack/core": "^2.0.8",
+    "postcss": "^8.5.15",
+    "postcss-import": "^16.1.1",
+    "postcss-loader": "^8.2.1",
+    "postcss-mixins": "^12.1.2",
+    "postcss-preset-env": "^11.3.1"
+  }
+}
