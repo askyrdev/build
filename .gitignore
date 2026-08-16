@@ -1,2 +1,9 @@
+# Editors and OSes
+# ================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
 node_modules
 dist
