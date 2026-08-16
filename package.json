@@ -1,8 +1,7 @@
 {
   "name": "@austere/build",
-  "private": true,
   "version": "0.1.0",
-  "description": "TBC",
+  "description": "Plugin for rspack providing specific functionality for working with WordPress.",
   "license": "GPL-2.0-or-later",
   "main": "lib/index.js",
   "type": "module",
@@ -15,7 +14,7 @@
     "es-module-lexer": "^2.3.1",
     "fast-glob": "^3.3.3",
     "postcss": "^8.5.15",
-    "postcss-import": "^16.1.1",
+    "postcss-import": "^17.0.0",
     "postcss-loader": "^8.2.1",
     "postcss-mixins": "^12.1.2",
     "postcss-preset-env": "^11.3.1"
