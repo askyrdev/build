@@ -3,9 +3,40 @@
 An rspack plugin that provides manifest output management and compatibility with WordPress, similar to Dependency
 Extraction Webpack plugin.
 
+* Includes PostCSS setup and support.
 * WordPress dependency extraction support, converting `@wordpress/` to `window.wp[]` equivalents, without needing 
 Webpack.
-* Outputs an `assets.json`
+* Outputs an `assets.json` with [subresource integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Subresource_Integrity) hashes for each CSS and JS asset.
+
+## Installation
+
+Install rspack CLI.
+
+```shell
+npm install --save-dev @rspack/cli
+```
+
+Install Askyr Build. **Please note;** this project is currently in development and not recommended for production use 
+outside Askyr projects.
+
+```shell
+npm install --save-dev --allow-git=root github:askyrdev/build
+```
+
+Then add the `rspack build` to the scripts.
+
+```json
+{
+  "name": "my-project",
+  "devDependencies": {
+    "@askyr/build": "github:askyrdev/build",
+    "@rspack/cli": "^2.2.1"
+  },
+  "scripts": {
+    "build": "rspack build"
+  }
+}
+```
 
 ## Example `rspack.config.mjs` for atypical WordPress
 
@@ -34,7 +65,7 @@ export default defineConfig( {
     },
     plugins: [
         // Add the AustereBuild to the plugins.
-        new AustereBuild( {
+        new AskyrBuild( {
             // Specify the type of project you are working on.
             type: 'wordpress',
             // Optionally add metadata to `assets.json` output, useful for server-side logic.
