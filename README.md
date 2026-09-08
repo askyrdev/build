@@ -148,6 +148,24 @@ Default; dist/.
 
 A path relative to the `rspack.config.mjs` directory where the build assets are to be outputted.
 
+### rules
+
+Enables the ability to toggle off predefined rules for rspack `module.rules` provided by Askyr Build. Useful for
+projects with custom requirements.
+
+Default values are;
+
+```javascript
+rules: {
+  asset: true,
+  css: true,
+  javascript: true,
+  json: true,
+}
+```
+
+See; https://rspack.rs/config/module-rules.
+
 ## Common issues
 
 If you see a message such as this;
