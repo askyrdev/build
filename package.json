@@ -1,6 +1,6 @@
 {
   "name": "@askyr/build",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Plugin for rspack providing specific functionality for working with WordPress.",
   "license": "GPL-2.0-or-later",
   "main": "lib/index.js",
