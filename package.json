@@ -16,7 +16,8 @@
     "postcss-import": "^17.0.0",
     "postcss-loader": "^8.2.1",
     "postcss-mixins": "^12.1.2",
-    "postcss-preset-env": "^11.3.1"
+    "postcss-preset-env": "^11.3.1",
+    "postcss-url": "^10.1.4"
   },
   "devDependencies": {
     "@rspack/core": "^2.1.9"
