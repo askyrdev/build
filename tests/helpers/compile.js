@@ -23,6 +23,7 @@ export async function compileFixture( fixtureName, pluginOptions = {} ) {
 		context: fixtureDir,
 		entry: {},
 		output: {
+			path: outputDir,
 			clean: true,
 		},
 		plugins: [
