@@ -21,5 +21,6 @@
     "html": false
   },
   "editorScript": "file:./index.js",
-  "viewStyle": "file:./view.css"
+  "viewStyle": "file:./view.css",
+  "viewScript": "file:./viewScript.js"
 }

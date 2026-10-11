@@ -2,7 +2,7 @@
  * Core dependencies.
  */
 import assert from 'node:assert';
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { describe, it } from 'node:test';
 
 /**
@@ -27,5 +27,27 @@ describe( 'Compile WordPress Blocks', () => {
 
 	it( 'Created assets.json', () => {
 		assert.equal( existsSync( result.outputDir + '/assets.json' ), true, 'assets.json exists' );
+	} );
+
+    const assetsJsonFileData = readFileSync( result.outputDir + '/assets.json' );
+	const assetsJson = JSON.parse( assetsJsonFileData );
+	console.log(Array.isArray(assetsJson));
+
+	it( 'assets.json is valid JSON', () => {
+		assert.equal( Array.isArray(assetsJson), true, 'assets.json is valid JSON' );
+	} );
+
+	it( 'Output assets exist in dist/', () => {
+		const validFilenames = [
+			'blocks/block.json',
+			'blocks/index.js',
+			'blocks/view.css',
+			'blocks/viewScript.js',
+		];
+
+		validFilenames.forEach( ( filename ) => {
+			console.log(result.outputDir + '/' + filename);
+			assert.equal( existsSync( result.outputDir + '/' + filename ), true, filename + ' exists' );
+		} );
 	} );
 } );
