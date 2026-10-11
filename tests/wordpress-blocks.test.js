@@ -31,7 +31,6 @@ describe( 'Compile WordPress Blocks', () => {
 
     const assetsJsonFileData = readFileSync( result.outputDir + '/assets.json' );
 	const assetsJson = JSON.parse( assetsJsonFileData );
-	console.log(Array.isArray(assetsJson));
 
 	it( 'assets.json is valid JSON', () => {
 		assert.equal( Array.isArray(assetsJson), true, 'assets.json is valid JSON' );
@@ -46,7 +45,6 @@ describe( 'Compile WordPress Blocks', () => {
 		];
 
 		validFilenames.forEach( ( filename ) => {
-			console.log(result.outputDir + '/' + filename);
 			assert.equal( existsSync( result.outputDir + '/' + filename ), true, filename + ' exists' );
 		} );
 	} );
