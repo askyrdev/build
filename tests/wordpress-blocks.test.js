@@ -2,25 +2,32 @@
  * Core dependencies.
  */
 import assert from 'node:assert';
-import { existsSync, readFileSync } from 'node:fs';
-import { describe, it } from 'node:test';
+import {
+	existsSync,
+	readFileSync,
+} from 'node:fs';
+import { before, describe, it } from 'node:test';
 
 /**
  * Internal dependencies.
  */
 import { compileFixture } from './helpers/compile.js';
 
-const result = await compileFixture(
-	'wordpress-blocks',
-	{
-		type: 'wordpress',
-		blocks: {
-			'main': 'includes/blocks'
-		},
-	}
-);
-
 describe( 'Compile WordPress Blocks', () => {
+	let result;
+
+	before( async () => {
+		result = await compileFixture(
+			'wordpress-blocks',
+			{
+				type: 'wordpress',
+				blocks: {
+					'main': 'includes/blocks'
+				},
+			}
+		);
+	} );
+
 	it( 'Compile without error.', () => {
 		assert.equal( result.stats.hasErrors(), false, 'No errors' );
 	} );
@@ -29,10 +36,10 @@ describe( 'Compile WordPress Blocks', () => {
 		assert.equal( existsSync( result.outputDir + '/assets.json' ), true, 'assets.json exists' );
 	} );
 
-    const assetsJsonFileData = readFileSync( result.outputDir + '/assets.json' );
-	const assetsJson = JSON.parse( assetsJsonFileData );
+    it( 'assets.json is valid JSON', () => {
+		const assetsJsonFileData = readFileSync( result.outputDir + '/assets.json' );
+		const assetsJson = JSON.parse( assetsJsonFileData );
 
-	it( 'assets.json is valid JSON', () => {
 		assert.equal( Array.isArray(assetsJson), true, 'assets.json is valid JSON' );
 	} );
 
@@ -48,4 +55,6 @@ describe( 'Compile WordPress Blocks', () => {
 			assert.equal( existsSync( result.outputDir + '/' + filename ), true, filename + ' exists' );
 		} );
 	} );
+
+	// TODO: check the dependencies for the JS files in asset.json
 } );
