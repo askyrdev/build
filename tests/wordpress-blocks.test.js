@@ -45,10 +45,10 @@ describe( 'Compile WordPress Blocks', () => {
 
 	it( 'Output assets exist in dist/', () => {
 		const validFilenames = [
-			'blocks/block.json',
-			'blocks/index.js',
-			'blocks/view.css',
-			'blocks/viewScript.js',
+			'blocks/example/block.json',
+			'blocks/example/index.js',
+			'blocks/example/view.css',
+			'blocks/example/viewScript.js',
 		];
 
 		validFilenames.forEach( ( filename ) => {
