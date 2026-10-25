@@ -16,6 +16,10 @@ import AskyrBuild from '../../lib/index.js';
 
 export async function compileFixture( fixtureName, pluginOptions = {} ) {
 	const fixtureDir = resolve( import.meta.dirname, '../fixtures', fixtureName );
+	console.log(
+		fixtureDir,
+		join( process.cwd(), 'testResults', 'askyr-test-' )
+	);
 	const outputDir = mkdtempSync( join( process.cwd(), 'testResults', 'askyr-test-' ) );
 
 	const compiler = rspack( {
