@@ -95,8 +95,15 @@ describe( 'Compile WordPress Blocks', () => {
 		const compiledIndexJs = readFileSync( `${ result.outputDir }/blocks/example/index.js`, 'utf8' );
 
 		assert.ok(
-			compiledIndexJs.includes( 'wp.blocks' ) || compiledIndexJs.includes( 'window.wp' ),
+			compiledIndexJs.includes( 'window.wp.blocks' ) || compiledIndexJs.includes( 'window.wp' ),
 			'Compiled index.js references external wp globals'
+		);
+
+		const compiledViewScriptJs = readFileSync( `${ result.outputDir }/blocks/example/index.js`, 'utf8' );
+
+		assert.ok(
+			compiledViewScriptJs.includes( 'window.wp.i18n' ) || compiledViewScriptJs.includes( 'window.wp' ),
+			'Compiled view.js references external wp globals'
 		);
 	} );
 
