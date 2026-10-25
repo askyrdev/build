@@ -21,3 +21,4 @@ jobs:
           ls -lah
           npm install
           npm run test
+          ls -lah
