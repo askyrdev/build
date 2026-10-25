@@ -2,9 +2,9 @@
  * Core dependencies.
  */
 import { mkdir, rm } from 'node:fs/promises';
-import { join } from 'node:path';
+import { resolve } from 'node:path';
 
-const rootDir = join( process.cwd(), 'testResults' );
+const rootDir = resolve( import.meta.dirname, '../../testResults' );
 
 /**
  * Clean up the test results area for the new tests.

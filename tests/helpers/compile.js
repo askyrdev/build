@@ -1,7 +1,7 @@
 /**
  * Core dependencies.
  */
-import { mkdtempSync } from 'node:fs';
+import { mkdirSync, mkdtempSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 
 /**
@@ -16,12 +16,9 @@ import AskyrBuild from '../../lib/index.js';
 
 export async function compileFixture( fixtureName, pluginOptions = {} ) {
 	const fixtureDir = resolve( import.meta.dirname, '../fixtures', fixtureName );
-	console.log(
-		import.meta.dirname,
-		process.cwd(),
-		join( process.cwd(), 'testResults', 'askyr-test-' )
-	);
-	const outputDir = mkdtempSync( join( process.cwd(), 'testResults', 'askyr-test-' ) );
+	const testResultsDir = resolve( import.meta.dirname, '../../testResults' );
+	mkdirSync( testResultsDir, { recursive: true } );
+	const outputDir = mkdtempSync( join( testResultsDir, 'askyr-test-' ) );
 
 	const compiler = rspack( {
 		mode: 'production',

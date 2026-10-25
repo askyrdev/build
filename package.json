@@ -10,8 +10,7 @@
     "email": "cameronterry@protonmail.com"
   },
   "scripts": {
-    "pretest": "node tests/helpers/setup.js",
-    "test": "node --test tests/**/*.test.js"
+    "test": "node tests/helpers/setup.js && node --test tests/**/*.test.js"
   },
   "dependencies": {
     "@csstools/postcss-global-data": "^4.0.0",
