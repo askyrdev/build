@@ -6,4 +6,4 @@ using sensible defaults.
 ## Support
 
 * Drupal
-* [WordPress](/wordpress/index.md)
+* [WordPress](/docs/wordpress/index.md)
