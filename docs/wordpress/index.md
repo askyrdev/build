@@ -87,7 +87,8 @@ Secondly, the `dist/assets.json`, will list the dependencies with a naming conve
 ]
 ```
 
-## Features
+## Documentation
 
-* Blocks
-* [Adding Subresource Integrity to JS enqueues](/docs/wordpress/subresource-integrity.md).
+* [Enqueuing assets](/docs/wordpress/enqueuing.md)
+* [Blocks](/docs/wordpress/blocks.md)
+* [Adding Subresource Integrity to JS enqueues](/docs/wordpress/subresource-integrity.md)
